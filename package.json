@@ -1,6 +1,6 @@
 {
   "name": "simple-stupid-match",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple stupid matching library for JS",
   "main": "match.js",
   "repository": "git@github.com:ya-kostik/simple-stupid-match.git",
@@ -8,11 +8,23 @@
   "license": "MIT",
   "private": false,
   "type": "module",
+  "files": [
+    "match.js",
+    "build/match.js",
+    "build/package.json"
+  ],
   "scripts": {
+    "build": "NODE_ENV=production babel match.js -d build/ && echo \"{\\\"name\\\":\\\"Removes type module for root package.json\\\"}\" > build/package.json",
     "lint": "eslint ./",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "tarball": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
+    "prepublishOnly": "yarn build && yarn tarball"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-preset-minify": "^0.5.1",
     "eslint": "^7.22.0",
     "jest": "^26.6.3",
     "lodash": "^4.17.21"

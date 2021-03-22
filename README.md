@@ -217,12 +217,21 @@ always becomes the last argument of `callback` function.
 # Install
 It requires lodash
 
-## Yarn
+### Yarn
 ```sh
 yarn add simple-stupid-match lodash
 ```
 
-## NPM
+### NPM
 ```sh
 npm install simple-stupid-match lodash
+```
+
+## Using pre-builded version in browser or NodeJS
+If your environment does not support native ESModules,
+you should use pre-builded version:
+```js
+import { match } from 'simple-stupid-match/build/match.js';
+// Or CommonJS
+const { match } = require('simple-stupid-match/build/match');
 ```

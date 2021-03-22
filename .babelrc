@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": ["last 5 versions", "safari >= 11", "ie >= 11"]
+      }
+    }]
+  ],
+  "env": {
+    "production": {
+      "comments": false,
+      "presets": [
+        "babel-preset-minify"
+      ]
+    }
+  }
+}
