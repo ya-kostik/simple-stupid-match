@@ -1,0 +1,23 @@
+{
+  "name": "simple-stupid-match",
+  "version": "0.1.0",
+  "description": "Simple stupid matching library for JS",
+  "main": "match.js",
+  "repository": "git@github.com:ya-kostik/simple-stupid-match.git",
+  "author": "Constantin Tsukanov <c@indotech.ru>",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "jest": "^26.6.3",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  }
+}
